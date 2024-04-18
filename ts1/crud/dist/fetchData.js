@@ -10,5 +10,7 @@ export const fetchRegistrations = (path, method, data) => {
         options.body = JSON.stringify(data);
         //options={body:JSON.stringify(data), ...options};
     }
+    // ?auth=${userInfo.idToken}` pridedame token kuri gavome po registracijos / prisijungimo
+    // Siunčiame ir token, nes kitaip nerodys informacijos (privalome išsiųsti)
     return fetch(`https://registracija-fd74c-default-rtdb.europe-west1.firebasedatabase.app/${path}.json`, options);
 };
